@@ -1,12 +1,12 @@
 import numpy as np
 
 def calculate(list):
-    if len(list) != 9:
+    if len(list) != 9: #Check for 9 numbers
         raise ValueError("List must contain nine numbers.")
     
-    array = np.reshape(np.array([list]),(3,3))
+    array = np.reshape(np.array([list]),(3,3)) #3x3 np array from 9 len list
     
-    mean1 = np.mean(array, axis=0).tolist()
+    mean1 = np.mean(array, axis=0).tolist() #convert to list for desired output format
     mean2 = np.mean(array, axis=1).tolist()
     mean_all = np.mean(array).tolist()
     
@@ -30,7 +30,7 @@ def calculate(list):
     sum2 = np.sum(array, axis=1).tolist()
     sum_all = np.sum(array).tolist()
 
-    calculations = dict()
+    calculations = dict() #dictionary to store calculated values
     calculations['mean'] = [mean1, mean2, mean_all]
     calculations['variance'] = [variance1, variance2, varaince_all]
     calculations['standard deviation'] = [std1, std2, std_all]
